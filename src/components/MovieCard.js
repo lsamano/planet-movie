@@ -6,7 +6,7 @@ const MovieCard = ({movie}) => {
   const color = vote_average > 7 ? "default" : "secondary"
 
   return (
-    <div className={`uk-card uk-card-${color} uk-card-hover uk-margin-small`}>
+    <div className={`uk-card uk-card-${color} uk-card-hover`}>
       <div className="uk-card-media-top">
         <img data-src={`http://image.tmdb.org/t/p/w500/${poster_path}`} alt="" uk-img="true"/>
       </div>
