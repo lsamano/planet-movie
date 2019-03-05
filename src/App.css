@@ -87,7 +87,12 @@
 	background-color: rgba(0,0,0,.475);
 	transition: .75s;
 }
-/*
-ul {
-  list-style-type: none;
-} */
+
+#login-line {
+  width: 100%;
+  margin: 2rem;
+}
+
+input[name="search"]{
+  width: 50%;
+}
