@@ -50,7 +50,43 @@
 #right-col {
   margin-left: 260px;
 }
-/* 
+
+.release-date {
+	color: #ddd;
+}
+
+.c {
+	background-color: rgba(0,160,200,0.9);
+}
+
+.white-text {
+	color: #fff !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.rent-buy-container {
+	text-align: center;
+}
+
+.rent-buy-btn {
+	padding:8px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: rgba(0,0,0,.075);
+	border: solid 2px #fff;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 1.15em;
+}
+
+.rent-buy-btn:hover {
+	background-color: rgba(0,0,0,.475);
+	transition: .75s;
+}
+/*
 ul {
   list-style-type: none;
 } */
