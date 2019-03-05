@@ -21,11 +21,11 @@ const Search = (props) => {
 
     </div>
 
-    <div className="nav-overlay uk-navbar-left uk-flex-1" hidden>
+    <div className="nav-overlay uk-navbar-left uk-flex-1" hidden="true">
 
         <div className="uk-navbar-item uk-width-expand">
             <form className="uk-search uk-search-navbar uk-width-1-1">
-                <input className="uk-search-input" type="search" placeholder="Search..." autofocus="true" />
+                <input className="uk-search-input" type="search" placeholder="Search..." autoFocus={true} />
             </form>
         </div>
 

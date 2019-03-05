@@ -4,7 +4,8 @@ import MovieCard from '../components/MovieCard';
 import Search from '../components/Search';
 import Login from '../components/Login';
 
-const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
+// const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
+const popularMoviesURL = "http://localhost:3000/api/v1/movies/popular"
 const genresURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiConfig.tmdbKey}`
 
 class PopularMoviesContainer extends React.Component {
@@ -18,8 +19,8 @@ class PopularMoviesContainer extends React.Component {
     .then(res => res.json())
     .then(data => this.setState(
       {
-        movies: data.results
-      }, () => console.log(data.results)
+        movies: data
+      }, () => console.log(this.state.movies)
     ))
 
     fetch(genresURL)
@@ -29,7 +30,7 @@ class PopularMoviesContainer extends React.Component {
 
   formatMovieCards = () => {
     return this.state.movies.map(movie => {
-      return <MovieCard movie={movie} />
+      return <MovieCard movie={movie} key={movie.id} />
     })
   }
 
