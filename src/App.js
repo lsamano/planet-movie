@@ -4,9 +4,6 @@ import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
 
 const popularMoviesURL = "http://localhost:3000/api/v1/movies/popular"
-const nowPlayingMoviesURL = "http://localhost:3000/api/v1/movies/now-playing"
-const topRatedMoviesURL = "http://localhost:3000/api/v1/movies/top-rated"
-const upcomingMoviesURL = "http://localhost:3000/api/v1/movies/upcoming"
 
 class App extends Component {
   state = {
@@ -24,26 +21,8 @@ class App extends Component {
     ))
   }
 
-  nowPlayingClickHandler = () => {
-    fetch(nowPlayingMoviesURL)
-    .then(res => res.json())
-    .then(data => this.setState({movies: data}))
-  }
-
-  mostPopularClickHandler = () => {
-    fetch(popularMoviesURL)
-    .then(res => res.json())
-    .then(data => this.setState({movies: data}))
-  }
-
-  topRatedClickHandler = () => {
-    fetch(topRatedMoviesURL)
-    .then(res => res.json())
-    .then(data => this.setState({movies: data}))
-  }
-
-  upcomingClickHandler = () => {
-    fetch(upcomingMoviesURL)
+  sectionClickHandler = section => {
+    fetch(`http://localhost:3000/api/v1/movies/${section}`)
     .then(res => res.json())
     .then(data => this.setState({movies: data}))
   }
@@ -52,10 +31,7 @@ class App extends Component {
     return (
       <div>
           <Navbar
-            nowPlayingClickHandler={this.nowPlayingClickHandler}
-            mostPopularClickHandler={this.mostPopularClickHandler}
-            topRatedClickHandler={this.topRatedClickHandler}
-            upcomingClickHandler={this.upcomingClickHandler}
+            sectionClickHandler={this.sectionClickHandler}
             />
           <MoviesContainer movies={this.state.movies} />
       </div>

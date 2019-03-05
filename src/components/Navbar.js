@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = ({nowPlayingClickHandler, mostPopularClickHandler, topRatedClickHandler, upcomingClickHandler}) => {
+const Navbar = ({sectionClickHandler}) => {
   return (
     <aside id="left-col" className="uk-light">
       <div className="bar-wrap">
@@ -10,10 +10,10 @@ const Navbar = ({nowPlayingClickHandler, mostPopularClickHandler, topRatedClickH
             <li className="uk-parent">
                 <a href="#">Movies</a>
                 <ul className="uk-nav-sub">
-                    <li><a onClick={mostPopularClickHandler}>Most Popular</a></li>
-                    <li><a onClick={nowPlayingClickHandler}>Now Playing</a></li>
-                    <li><a onClick={topRatedClickHandler}>Top Rated</a></li>
-                    <li><a onClick={upcomingClickHandler}>Upcoming</a></li>
+                    <li><a onClick={() => sectionClickHandler("popular")}>Most Popular</a></li>
+                    <li><a onClick={() => sectionClickHandler("now-playing")}>Now Playing</a></li>
+                    <li><a onClick={() => sectionClickHandler("top-rated")}>Top Rated</a></li>
+                    <li><a onClick={() => sectionClickHandler("upcoming")}>Upcoming</a></li>
                 </ul>
             </li>
             <li className="uk-parent">
