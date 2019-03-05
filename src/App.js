@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
 
-const baseURL = "http://localhost:3000"
+const baseURL = "http://localhost:3000/api/v1"
 const popularMoviesURL = "http://localhost:3000/api/v1/movies/popular"
 
 class App extends Component {
