@@ -4,6 +4,8 @@ import MovieCard from '../components/MovieCard';
 import Search from '../components/Search';
 import Login from '../components/Login';
 
+
+
 // const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
 const popularMoviesURL = "http://localhost:3000/api/v1/movies/popular"
 // const genresURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiConfig.tmdbKey}`
