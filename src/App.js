@@ -4,40 +4,47 @@ import './App.css';
 import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
 
-const baseURL = "http://localhost:3000"
-const popularMoviesURL = "http://localhost:3000/api/v1/movies/popular"
+const baseURL = "http://localhost:3000/api/v1/movies"
+// const moviesURL = "http://localhost:3000/api/v1/movies"
 
 class App extends Component {
   state = {
     movies: [],
-    genres: []
+    popularMovies: [],
+    topRatedMovies: [],
+    upcomingMovies: [],
+    nowPlayingMovies: []
   }
 
   componentDidMount = () => {
-    fetch(popularMoviesURL)
+    fetch(baseURL)
     .then(res => res.json())
-    .then(data => this.setState(
-      {
-        movies: data
-      }, () => console.log(this.state.movies)
-    ))
-  }
+    .then(data => {
+      const popularMovies = data.filter(movie => movie.category === "popular")
+      const nowPlayingMovies = data.filter(movie => movie.category === "now_playing")
+      const upcomingMovies = data.filter(movie => movie.category === "upcoming")
+      const topRatedMovies = data.filter(movie => movie.category === "top_rated")
 
-  sectionClickHandler = section => {
-    fetch(`${baseURL}/${section}`)
-    .then(res => res.json())
-    .then(data => this.setState({movies: data}))
+      this.setState({
+        movies: data,
+        popularMovies,
+        topRatedMovies,
+        upcomingMovies,
+        nowPlayingMovies
+      }, () => console.log("This is the state", this.state)
+      )
+    })
   }
 
   render() {
     return (
       <div>
-          <Navbar sectionClickHandler={this.sectionClickHandler}/>
+          <Navbar/>
 					<Switch>
-          	<Route path="/movies/popular" render={() => <MoviesContainer movies={this.state.movies}/>} />
-						<Route path="/movies/top-rated" render={() => <MoviesContainer movies={this.state.movies}/>} />
-						<Route path="/movies/now_playing" render={() => <MoviesContainer movies={this.state.movies}/>} />
-						<Route path="/movies/upcoming" render={() => <MoviesContainer movies={this.state.movies}/>} />
+          	<Route path="/movies/popular" render={() => <MoviesContainer movies={this.state.popularMovies}/>} />
+						<Route path="/movies/top-rated" render={() => <MoviesContainer movies={this.state.topRatedMovies}/>} />
+						<Route path="/movies/now-playing" render={() => <MoviesContainer movies={this.state.nowPlayingMovies}/>} />
+						<Route path="/movies/upcoming" render={() => <MoviesContainer movies={this.state.upcomingMovies}/>} />
 						<Route path="/movies" render={() => <MoviesContainer movies={this.state.movies}/>} />
 					</Switch>
       </div>
