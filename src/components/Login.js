@@ -2,8 +2,10 @@ import React from 'react';
 
 const Login = (props) => {
   return (
-    <div className="uk-position-right">
-      Login • Signup
+    <div id="login-line">
+      <div className="uk-position-right">
+        Login • Signup
+      </div>
     </div>
   )
 }

@@ -23,7 +23,7 @@ const MovieCard = ({movie}) => {
 					</div>
 					<div className="uk-card-body white-text">
 						<p>Fan Score: <span className="bold">{vote_average}/10</span></p>
-						<p className="white-text">{overview}</p>
+						<p className="white-text uk-text-truncate">{overview}</p>
 						<div className="rent-buy-container">
 							<button className="rent-buy-btn">Rent or Buy</button>
 						</div>
