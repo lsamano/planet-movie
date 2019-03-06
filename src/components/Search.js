@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = (props) => {
   return (
-    <nav className="uk-navbar-container" data-uk-navbar>
+    <nav className="uk-navbar-container z" data-uk-navbar>
 
     <div className="nav-overlay uk-navbar-left">
        <ul className="uk-navbar-nav">

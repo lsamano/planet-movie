@@ -10,16 +10,17 @@ import Search from '../components/Search';
 class MoviesContainer extends React.Component {
   formatMovieCards = () => {
     return this.props.movies.map(movie => {
-      return <MovieCard movie={movie} key={movie.id} />
+      return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.props.showSingleMovie} />
     })
   }
 
   render() {
+
     return (
       <div id="right-col">
 
         <Search />
-
+        
         <div
         uk-grid="true"
         uk-height-match="true"

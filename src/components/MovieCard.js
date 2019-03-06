@@ -1,12 +1,13 @@
 import React from 'react';
 import '../App.css';
+import { Link } from "react-router-dom";
+
 
 
 var moment = require('moment');
 
-const MovieCard = ({movie}) => {
-  const {title, vote_average, overview, release_date, poster_path, backdrop_path} = movie
-
+const MovieCard = ({movie, showSingleMovie}) => {
+  const {title, vote_average, overview, release_date, poster_path, backdrop_path, ref_code} = movie
   return (
     <div className={`uk-card uk-card-default`}>
       <div className="uk-card-media-top uk-inline">
@@ -26,7 +27,7 @@ const MovieCard = ({movie}) => {
 
 						<p className="white-text">{overview.substring(0, 100)}...</p>
 						<div className="rent-buy-container">
-							<button className="rent-buy-btn">Rent or Buy</button>
+							<Link to={`/movies/${ref_code}`}><button onClick={(e) => showSingleMovie(e, movie, ref_code)} className="rent-buy-btn">Rent or Buy</button></Link>
 						</div>
 
 					</div>

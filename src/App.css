@@ -41,7 +41,7 @@
   overflow-y: auto;
   background-color: #222;
   width: 260px;
-  z-index:1;
+  z-index:200;
 }
 
 .bar-wrap {

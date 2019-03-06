@@ -3,10 +3,14 @@ import {Route, Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
+<<<<<<< HEAD
 import Signup from "./components/Signup";
+=======
+import ShowContainer from './containers/ShowContainer';
+
+>>>>>>> 424aa20f71ad01d023fe5efd405f917a8d2af9ec
 
 const baseURL = "http://localhost:3000/api/v1/movies"
-// const moviesURL = "http://localhost:3000/api/v1/movies"
 
 class App extends Component {
   state = {
@@ -50,12 +54,21 @@ class App extends Component {
         popularMovies,
         topRatedMovies,
         upcomingMovies,
-        nowPlayingMovies
+        nowPlayingMovies,
+				singleMovie: null,
+				moviePath: null
       }, () => console.log("This is the state", this.state)
       )
     })
   }
+	showSingleMovie = (e, movie, ref_code) => {
 
+		this.setState({
+			singleMovie: movie,
+			moviePath: ref_code
+		})
+
+<<<<<<< HEAD
   signupSubmitHandler = userInfo => {
     fetch("http://localhost:3000/api/v1/users", {
       method: "POST",
@@ -72,8 +85,8 @@ class App extends Component {
       });
   };
 
-
   render() {
+		console.log("Current movie code", this.state.moviePath);
     return (
       <div>
           <Navbar/>
