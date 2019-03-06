@@ -1,16 +1,55 @@
 import React from 'react';
 // import apiConfig from '../apiKeys';
-// import { Route, Switch } from "react-router-dom";
+import {Route, Switch, Redirect} from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Search from '../components/Search';
 // import Login from '../components/Login';
 
 // const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
+const baseURL = "http://localhost:3000/api/v1/movies"
+
 
 class MoviesContainer extends React.Component {
-  formatMovieCards = () => {
-    return this.props.movies.map(movie => {
-      return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.props.showSingleMovie} />
+  state = {
+    movies: [],
+    popularMovies: [],
+    topRatedMovies: [],
+    upcomingMovies: [],
+    nowPlayingMovies: [],
+    singleMovie: null,
+    moviePath: ""
+  }
+
+  componentDidMount = () => {
+    fetch(baseURL)
+    .then(res => res.json())
+    .then(data => {
+      const popularMovies = data.filter(movie => movie.category === "popular")
+      const nowPlayingMovies = data.filter(movie => movie.category === "now_playing")
+      const upcomingMovies = data.filter(movie => movie.category === "upcoming")
+      const topRatedMovies = data.filter(movie => movie.category === "top_rated")
+
+      this.setState({
+        movies: data,
+        popularMovies,
+        topRatedMovies,
+        upcomingMovies,
+        nowPlayingMovies
+      }, () => console.log("This is the state", this.state)
+      )
+    })
+  }
+
+  showSingleMovie = (e, movie, ref_code) => {
+    this.setState({
+      singleMovie: movie,
+      moviePath: ref_code
+    })
+  }
+
+  formatMovieCards = movies => {
+    return movies.map(movie => {
+      return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.showSingleMovie} />
     })
   }
 
@@ -20,13 +59,19 @@ class MoviesContainer extends React.Component {
       <div id="right-col">
 
         <Search />
-        
+
         <div
         uk-grid="true"
         uk-height-match="true"
         className="uk-child-width-1-4 uk-grid-collapse stretch"
         >
-          {this.formatMovieCards()}
+        <Switch>
+          <Route path="/movies/popular" render={() => this.formatMovieCards(this.state.popularMovies)} />
+          <Route path="/movies/top-rated" render={() => this.formatMovieCards(this.state.topRatedMovies)} />
+          <Route path="/movies/now-playing" render={() => this.formatMovieCards(this.state.nowPlayingMovies)} />
+          <Route path="/movies/upcoming" render={() => this.formatMovieCards(this.state.upcomingMovies)} />
+        </Switch>
+
         </div>
       </div>
     )
