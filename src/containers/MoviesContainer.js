@@ -3,6 +3,7 @@ import React from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Search from '../components/Search';
+import ShowContainer from './ShowContainer';
 // import Login from '../components/Login';
 
 // const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
@@ -70,6 +71,18 @@ class MoviesContainer extends React.Component {
           <Route path="/movies/top-rated" render={() => this.formatMovieCards(this.state.topRatedMovies)} />
           <Route path="/movies/now-playing" render={() => this.formatMovieCards(this.state.nowPlayingMovies)} />
           <Route path="/movies/upcoming" render={() => this.formatMovieCards(this.state.upcomingMovies)} />
+          <Route
+          path="/movies/:ref_code"
+          render={routerProps => {
+            let ref_code = routerProps.match.params.ref_code;
+            let movie = this.state.movies.find(movie => movie.ref_code == parseInt(ref_code))
+            console.log("this is the movie:", movie);
+            console.log("these are routerProps", routerProps);
+            console.log("this is the ref code:", ref_code);
+            console.log("these are all the movies in state:", this.state.movies)
+            return <ShowContainer movie={movie} />;
+          }}
+          />
         </Switch>
 
         </div>

@@ -4,7 +4,6 @@ import './App.css';
 import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
 import Signup from "./components/Signup";
-import ShowContainer from './containers/ShowContainer';
 
 class App extends Component {
   state = {
