@@ -8,11 +8,21 @@ import Search from '../components/Search';
 // const popularMoviesURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiConfig.tmdbKey}`
 
 class MoviesContainer extends React.Component {
+
+
   formatMovieCards = () => {
     return this.props.movies.map(movie => {
-      return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.props.showSingleMovie} />
+      return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.showSingleMovie} />
     })
   }
+
+	showSingleMovie = (e, movie, ref_code) => {
+
+		this.setState({
+			singleMovie: movie,
+			moviePath: ref_code
+		})
+	}
 
   render() {
 

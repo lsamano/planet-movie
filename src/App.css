@@ -156,3 +156,7 @@ button:focus {outline:0;}
 input[name="size"]{
   width: 50%;
 }
+
+.stretch {
+  align-items: stretch;
+}
