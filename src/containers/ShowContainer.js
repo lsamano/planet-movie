@@ -2,6 +2,7 @@ import React from 'react';
 import Search from '../components/Search';
 import '../ShowContainer.css'
 
+var moment = require('moment');
 
 class ShowContainer extends React.Component {
 
@@ -17,9 +18,16 @@ class ShowContainer extends React.Component {
         <Search className="z"/>
 				<div className="content">
         	<h1 className="space-left">{title}</h1>
-					<p className="space-left">{overview}</p>
-					<p className="space-left">{rental_price}</p>
-					<p className="space-left">{purchase_price}</p>
+					<h4 className="space-left">Released ({moment(release_date).format("YYYY")}) | Fan Score: {vote_average}</h4>
+					<p className="space-left overview">{overview}</p>
+					<div className="space-left flexify-btns">
+						<div className="rent">
+							<button className="rent-buy-btn">{`Rent: $${rental_price}`}</button>
+						</div>
+						<div className="buy">
+							<button className="rent-buy-btn">{`Buy: $${purchase_price}`}</button>
+						</div>
+					</div>
 				</div>
       </div>
 		)

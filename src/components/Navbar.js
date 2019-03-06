@@ -24,7 +24,7 @@ const Navbar = ({sectionClickHandler}) => {
                     <li><a>Sub item</a></li>
                 </ul>
             </li>
-            <li className="uk-nav-header">My Profile</li>
+            <li className="uk-nav-header">My Movies</li>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
             <li className="uk-nav-divider"></li>

@@ -15,13 +15,13 @@ class MoviesContainer extends React.Component {
   }
 
   render() {
-		
+
     return (
       <div id="right-col">
 
         <Search />
 
-        <div uk-grid="true" uk-height-match="true" className="uk-child-width-1-2 uk-grid-collapse">
+        <div uk-height-match="true" className="flexify">
           {this.formatMovieCards()}
         </div>
       </div>

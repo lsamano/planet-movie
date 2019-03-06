@@ -1,3 +1,61 @@
+.flexify {
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 600px) {
+	.flexify {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+	}
+
+	.flex-child {
+		flex: 1;
+		flex-basis: 100%;
+	}
+}
+
+@media (min-width: 750px) {
+	.flexify {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+	}
+
+	.flex-child {
+		flex: 1;
+		flex-basis: 50%;
+	}
+}
+
+@media (min-width: 1280px) {
+	.flexify {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+	}
+
+	.flex-child {
+		flex: 1;
+		flex-basis: 33.3333%;
+	}
+}
+
+@media (min-width: 1600px) {
+	.flexify {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:space-between;
+	}
+
+	.flex-child {
+		flex: 1;
+		flex-basis: 25%;
+	}
+}
+
+
 .App {
   text-align: center;
 }
@@ -32,6 +90,8 @@
   }
 }
 
+button:focus {outline:0;}
+
 #left-col {
   position: fixed;
   left: 0;
@@ -41,7 +101,7 @@
   overflow-y: auto;
   background-color: #222;
   width: 260px;
-  z-index:200;
+  z-index:500;
 }
 
 .bar-wrap {
@@ -72,10 +132,10 @@
 }
 
 .rent-buy-btn {
-	padding:8px;
+	padding:6px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background-color: rgba(0,0,0,.075);
+	background-color: rgba(0,0,0,.095);
 	border: solid 2px #fff;
 	border-radius: 6px;
 	color: #fff;

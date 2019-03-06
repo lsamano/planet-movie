@@ -1,10 +1,12 @@
 .space-left {
-	padding-left: 400px;
+	margin-left: 400px;
 }
 .bkg {
 	position: fixed;
+	display: flex;
+	background-color: rgba(0,0,0,1);
 	width: 100%;
-	height: auto;
+	height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,7 +16,7 @@
 }
 
 .z {
-	z-index: 120;
+	z-index: 90;
 	opacity: .85;
 	margin-left: 260px;
 }
@@ -32,5 +34,31 @@
 	width: 90%;
 	position: relative;
 	z-index: 300;
+	color: #fff;
+}
+
+.space-left button {
+  margin-right: 10px;
+}
+
+.overview {
+	font-size: 1.25em;
+}
+
+.flexify-btns {
+	display: flex;
+}
+
+.buy {
+	max-width: 160px;
+	flex: 1;
+}
+
+.rent {
+	max-width: 180px;
+	flex: 1;
+}
+
+h4 {
 	color: #fff;
 }

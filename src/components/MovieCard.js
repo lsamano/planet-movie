@@ -9,8 +9,8 @@ var moment = require('moment');
 const MovieCard = ({movie, showSingleMovie}) => {
   const {title, vote_average, overview, release_date, poster_path, backdrop_path, ref_code} = movie
   return (
-    <div className={`uk-card uk-card-default`}>
-      <div className="uk-card-media-top uk-inline">
+    <div className={`flex-child`}>
+      <div className="">
 
 			<div class="uk-inline uk-visible-toggle">
 					<img data-src={`http://image.tmdb.org/t/p/w500/${poster_path}`} alt=""  uk-img="true"/>
