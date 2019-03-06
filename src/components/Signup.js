@@ -38,7 +38,7 @@ class Signup extends React.Component {
             value={this.state.password}
             onChange={this.changeHandler}
           />
-          <button>Log In</button>
+          <button>Sign Up</button>
         </form>
       </div>
     );

@@ -22,7 +22,12 @@ class MoviesContainer extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(baseURL)
+    fetch(baseURL, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`
+      }
+    })
     .then(res => res.json())
     .then(data => {
       const popularMovies = data.filter(movie => movie.category === "popular")
