@@ -73,7 +73,7 @@ class App extends Component {
 	render() {
     return (
       <div>
-          {this.state.user.name ? <Navbar user={this.state.user} /> : null }
+          <Navbar user={this.state.user} />
 					<Switch>
             <Route
               path="/login"
