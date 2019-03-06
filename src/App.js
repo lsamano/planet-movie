@@ -3,12 +3,8 @@ import {Route, Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar';
 import MoviesContainer from './containers/MoviesContainer';
-<<<<<<< HEAD
 import Signup from "./components/Signup";
-=======
 import ShowContainer from './containers/ShowContainer';
-
->>>>>>> 424aa20f71ad01d023fe5efd405f917a8d2af9ec
 
 const baseURL = "http://localhost:3000/api/v1/movies"
 
