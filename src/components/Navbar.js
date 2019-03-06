@@ -32,7 +32,6 @@ const Navbar = ({sectionClickHandler, user}) => {
             <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
             <li className="uk-nav-divider"></li>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
-            <li><a><span className="uk-margin-small-right" uk-icon="icon: trash"></span> {user.name} vvv</a></li>
         </ul>
       </div>
     </aside>
