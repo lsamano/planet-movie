@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import MyMovie from './MyMovie'
 
 const Navbar = ({sectionClickHandler}) => {
   return (
@@ -25,6 +26,7 @@ const Navbar = ({sectionClickHandler}) => {
                 </ul>
             </li>
             <li className="uk-nav-header">My Movies</li>
+						<MyMovie/>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
             <li className="uk-nav-divider"></li>
