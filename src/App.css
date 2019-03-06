@@ -96,3 +96,7 @@
 input[name="size"]{
   width: 50%;
 }
+
+.stretch {
+  align-items: stretch;
+}

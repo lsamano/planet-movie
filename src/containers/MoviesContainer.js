@@ -20,7 +20,11 @@ class MoviesContainer extends React.Component {
 
         <Search />
 
-        <div uk-grid="true" uk-height-match="true" className="uk-child-width-1-4 uk-grid-collapse">
+        <div
+        uk-grid="true"
+        uk-height-match="true"
+        className="uk-child-width-1-4 uk-grid-collapse stretch"
+        >
           {this.formatMovieCards()}
         </div>
       </div>
