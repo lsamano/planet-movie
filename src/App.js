@@ -34,7 +34,7 @@ class App extends Component {
         if (user.message) {
           return <Redirect to="/login" />;
         } else {
-          this.setState({ user }, () => console.log("User is logged in!", user));
+          this.setState({ user: user.user }, () => console.log("User is logged in from componentDidMount!", user));
         }
       });
   }
@@ -92,7 +92,7 @@ class App extends Component {
           return <Redirect to="/login" />;
         } else {
           localStorage.setItem("token", user.jwt);
-          this.setState({ user }, () => console.log("User is logged in!", user));
+          this.setState({ user: user.user }, () => console.log("User is logged in from loginSubmitHandler!", user));
         }
       });
   };
