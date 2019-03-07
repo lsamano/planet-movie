@@ -15,7 +15,14 @@ const Search = (props) => {
 
           <div className="uk-navbar-item uk-width-xlarge">
               <form className="uk-search uk-search-navbar uk-width-1-1">
-                  <input className="uk-search-input" name="search" type="search" placeholder="Search..." autofocus="true" />
+                  <input
+                    className="uk-search-input"
+                    name="search"
+                    type="search"
+                    placeholder="Search..."
+                    autofocus="true"
+                    value={props.searchTerm}
+                    onChange={props.filterMovies} />
               </form>
           </div>
 

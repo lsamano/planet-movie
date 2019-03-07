@@ -18,7 +18,8 @@ class MoviesContainer extends React.Component {
     upcomingMovies: [],
     nowPlayingMovies: [],
     singleMovie: null,
-    moviePath: ""
+    moviePath: "",
+    searchTerm: ""
   }
 
   componentDidMount = () => {
@@ -54,7 +55,9 @@ class MoviesContainer extends React.Component {
   }
 
   formatMovieCards = movies => {
-    return movies.map(movie => {
+    let filteredMovies = movies.filter(movie=>movie.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+
+    return filteredMovies.map(movie => {
       return <MovieCard movie={movie} key={movie.id} showSingleMovie={this.showSingleMovie} />
     })
   }
@@ -67,12 +70,17 @@ class MoviesContainer extends React.Component {
 		})
 	}
 
-  render() {
+  filterMovies = event => {
+    this.setState({
+      searchTerm: event.target.value
+    }, console.log("The search bar is typing", this.state.searchTerm))
+  }
 
+  render() {
     return (
       <div>
 
-        <Search />
+        <Search filterMovies={this.filterMovies} searchTerm={this.state.searchTerm}/>
 
         <div uk-height-match="true" className="flexify" id="right-col">
         <Switch>
