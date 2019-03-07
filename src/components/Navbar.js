@@ -12,7 +12,7 @@ const Navbar = ({sectionClickHandler, user}) => {
 						{user.name && <li><a><span className="uk-margin-small-right" uk-icon="icon: user"></span>Welcome {user.name}</a></li>}
 						<li className="uk-nav-divider"></li>
 
-            <li className="uk-active"><Link to="/movies"><a>Home</a></Link></li>
+            <li className="uk-active"><Link to="/movies">Home</Link></li>
             <li className="uk-parent">
                 <a>Movies</a>
                 <ul className="uk-nav-sub">

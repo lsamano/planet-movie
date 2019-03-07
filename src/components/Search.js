@@ -11,7 +11,7 @@ const Search = (props) => {
 
       </div>
 
-      <div className="nav-overlay uk-navbar-left uk-flex-1" hidden="true">
+      <div className="nav-overlay uk-navbar-left uk-flex-1" hidden={true}>
 
           <div className="uk-navbar-item uk-width-xlarge">
               <form className="uk-search uk-search-navbar uk-width-1-1">
@@ -20,7 +20,7 @@ const Search = (props) => {
                     name="search"
                     type="search"
                     placeholder="Search..."
-                    autofocus="true"
+                    autoFocus={true}
                     value={props.searchTerm}
                     onChange={props.filterMovies} />
               </form>
