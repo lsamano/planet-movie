@@ -37,30 +37,28 @@ class App extends Component {
           this.setState({ user }, () => console.log("User is logged in!", user));
         }
       });
-
-    fetch(baseURL)
-    .then(res => res.json())
-    .then(data => {
-      const popularMovies = data.filter(movie => movie.category === "popular")
-      const nowPlayingMovies = data.filter(movie => movie.category === "now_playing")
-      const upcomingMovies = data.filter(movie => movie.category === "upcoming")
-      const topRatedMovies = data.filter(movie => movie.category === "top_rated")
-
-      this.setState({
-        movies: data,
-        popularMovies,
-        topRatedMovies,
-        upcomingMovies,
-        nowPlayingMovies,
-				singleMovie: null,
-				moviePath: null
-      }, () => console.log("This is the state", this.state)
-      )
-    })
   }
 
 	getMovie(e, rentOrBuy, id, user) {
-		console.log(user);
+		console.log("user_id:", user);
+		console.log("movie_id:", id);
+		if (rentOrBuy === "rent") {
+			fetch("http://localhost:3000/api/v1/rentals", {
+	      method: "POST",
+	      body: JSON.stringify({
+					user_id: user.id,
+					movie_id: id
+				}),
+	      headers: {
+	        "content-type": "application/json",
+	        accepts: "application/json"
+	      }
+	    })
+	      .then(resp => resp.json())
+				.then(rental => console.log(rental))
+		}
+
+
 	}
 
   signupSubmitHandler = userInfo => {
