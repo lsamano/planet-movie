@@ -22,10 +22,10 @@ class ShowContainer extends React.Component {
 					<p className="space-left overview">{overview}</p>
 					<div className="space-left flexify-btns">
 						<div className="rent">
-							<button onClick={(e) => this.props.getMovie(e, 'rent', this.props.movie.id, this.props.user)} className="rent-buy-btn">{`Rent: $${rental_price}`}</button>
+							<button onClick={(e) => this.props.rentMovie(e, this.props.movie.id, this.props.user)} className="rent-buy-btn">{`Rent: $${rental_price}`}</button>
 						</div>
 						<div className="buy">
-							<button onClick={(e) => this.props.getMovie(e, 'buy', this.props.movie.id, this.props.user)} className="rent-buy-btn">{`Buy: $${purchase_price}`}</button>
+							<button onClick={(e) => this.props.buyMovie(e, this.props.movie.id, this.props.user)} className="rent-buy-btn">{`Buy: $${purchase_price}`}</button>
 						</div>
 					</div>
 				</div>

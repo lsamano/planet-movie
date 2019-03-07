@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import MyMovie from './MyMovie'
 
-const Navbar = ({sectionClickHandler, user}) => {
-  console.log("The user in Navbar:", user, user.name);
+const Navbar = ({sectionClickHandler, user, rentals, buys, allMovies}) => {
+
   return (
     <aside id="left-col" className="uk-light">
       <div className="bar-wrap">
@@ -30,9 +30,9 @@ const Navbar = ({sectionClickHandler, user}) => {
                 </ul>
             </li>
             <li className="uk-nav-header">My Rentals</li>
-						<MyMovie/>
+						
 						<li className="uk-nav-header">My Purchases</li>
-						<MyMovie/>
+
 
 
 

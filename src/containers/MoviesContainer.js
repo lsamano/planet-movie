@@ -89,7 +89,7 @@ class MoviesContainer extends React.Component {
             console.log("these are routerProps", routerProps);
             console.log("this is the ref code:", ref_code);
             console.log("these are all the movies in state:", this.state.movies)
-            return <ShowContainer movie={movie} getMovie={this.props.getMovie} user={this.props.user}/>;
+            return <ShowContainer movie={movie} rentMovie={this.props.rentMovie} buyMovie={this.props.buyMovie} user={this.props.user}/>;
           }}
           />
         </Switch>
