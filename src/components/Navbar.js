@@ -25,8 +25,7 @@ const Navbar = ({sectionClickHandler, user}) => {
             <li className="uk-parent">
                 <a>Categories</a>
                 <ul className="uk-nav-sub">
-                    <li><a>Sub item</a></li>
-                    <li><a>Sub item</a></li>
+                    <li><a>Coming Soon!</a></li>
                 </ul>
             </li>
             <li className="uk-nav-header">My Rentals</li>
