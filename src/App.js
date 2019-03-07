@@ -125,11 +125,11 @@ class App extends Component {
 					<Switch>
             <Route
               path="/login"
-              render={() => <Login loginSubmitHandler={this.loginSubmitHandler}/>}
+              render={() => <Login submitHandler={this.loginSubmitHandler} name="Login"/>}
               />
             <Route
             path="/signup"
-            render={  () => <Signup submitHandler={this.signupSubmitHandler}/>  }/>
+            render={  () => <Login submitHandler={this.signupSubmitHandler} name="Sign Up"/>  }/>
           	<Route path="/movies/popular" render={() => <MoviesContainer movies={this.state.popularMovies} getMovie={this.getMovie} user={this.state.user}/>} />
 						<Route path="/movies/top-rated" render={() => <MoviesContainer movies={this.state.topRatedMovies} getMovie={this.getMovie} user={this.state.user}/>} />
 						<Route path="/movies/now-playing" render={() => <MoviesContainer movies={this.state.nowPlayingMovies} getMovie={this.getMovie} user={this.state.user}/>} />
