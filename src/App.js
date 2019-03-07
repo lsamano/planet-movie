@@ -142,16 +142,16 @@ class App extends Component {
 					<Switch>
             <Route
               path="/login"
-              render={() => <Login loginSubmitHandler={this.loginSubmitHandler}/>}
+              render={() => <Login submitHandler={this.loginSubmitHandler} name="Login"/>}
               />
             <Route
             path="/signup"
-            render={  () => <Signup submitHandler={this.signupSubmitHandler}/>  }/>
-          	<Route path="/movies/popular" render={() => <MoviesContainer movies={this.state.popularMovies} rentMovie={this.rentMovie} buyMovie={this.buyMovie} user={this.state.user}/>} />
-						<Route path="/movies/top-rated" render={() => <MoviesContainer movies={this.state.topRatedMovies} rentMovie={this.rentMovie} buyMovie={this.buyMovie} user={this.state.user}/>} />
-						<Route path="/movies/now-playing" render={() => <MoviesContainer movies={this.state.nowPlayingMovies} rentMovie={this.rentMovie} buyMovie={this.buyMovie} user={this.state.user}/>} />
-						<Route path="/movies/upcoming" render={() => <MoviesContainer movies={this.state.upcomingMovies} rentMovie={this.rentMovie} buyMovie={this.buyMovie} user={this.state.user}/>} />
-						<Route path="/movies" render={() => <MoviesContainer movies={this.state.movies} rentMovie={this.rentMovie} buyMovie={this.buyMovie} user={this.state.user}/>} />
+            render={  () => <Login submitHandler={this.signupSubmitHandler} name="Sign Up"/>  }/>
+          	<Route path="/movies/popular" render={() => <MoviesContainer movies={this.state.popularMovies} getMovie={this.getMovie} user={this.state.user}/>} />
+						<Route path="/movies/top-rated" render={() => <MoviesContainer movies={this.state.topRatedMovies} getMovie={this.getMovie} user={this.state.user}/>} />
+						<Route path="/movies/now-playing" render={() => <MoviesContainer movies={this.state.nowPlayingMovies} getMovie={this.getMovie} user={this.state.user}/>} />
+						<Route path="/movies/upcoming" render={() => <MoviesContainer movies={this.state.upcomingMovies} getMovie={this.getMovie} user={this.state.user}/>} />
+						<Route path="/movies" render={() => <MoviesContainer movies={this.state.movies} getMovie={this.getMovie} user={this.state.user}/>} />
 					</Switch>
       </div>
     )

@@ -154,6 +154,8 @@ input[name="size"]{
   width: 50%;
 }
 
-.stretch {
-  align-items: stretch;
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

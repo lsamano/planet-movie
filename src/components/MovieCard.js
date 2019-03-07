@@ -12,10 +12,10 @@ const MovieCard = ({movie, showSingleMovie}) => {
     <div className={`flex-child`}>
       <div className="">
 
-			<div class="uk-inline uk-visible-toggle">
+			<div className="uk-inline uk-visible-toggle">
 					<img data-src={`http://image.tmdb.org/t/p/w500/${poster_path}`} alt=""  uk-img="true"/>
-					<div class="uk-overlay-default uk-position-cover uk-invisible-hover c"></div>
-					<div class="uk-overlay uk-position-bottom uk-dark uk-invisible-hover">
+					<div className="uk-overlay-default uk-position-cover uk-invisible-hover c"></div>
+					<div className="uk-overlay uk-position-bottom uk-dark uk-invisible-hover">
 					<div className="uk-card-header">
 						<h3 className="uk-card-title white-text">{title}
 							<span className="release-date uk-text-small"> ({moment(release_date).format("YYYY")})</span>

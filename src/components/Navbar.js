@@ -12,7 +12,7 @@ const Navbar = ({sectionClickHandler, user, rentals, buys, allMovies}) => {
 						{user.name && <li><a><span className="uk-margin-small-right" uk-icon="icon: user"></span>Welcome {user.name}</a></li>}
 						<li className="uk-nav-divider"></li>
 
-            <li className="uk-active"><Link to="/movies"><a>Home</a></Link></li>
+            <li className="uk-active"><Link to="/movies">Home</Link></li>
             <li className="uk-parent">
                 <a>Movies</a>
                 <ul className="uk-nav-sub">
@@ -25,8 +25,7 @@ const Navbar = ({sectionClickHandler, user, rentals, buys, allMovies}) => {
             <li className="uk-parent">
                 <a>Categories</a>
                 <ul className="uk-nav-sub">
-                    <li><a>Sub item</a></li>
-                    <li><a>Sub item</a></li>
+                    <li><a>Coming Soon!</a></li>
                 </ul>
             </li>
             <li className="uk-nav-header">My Rentals</li>
