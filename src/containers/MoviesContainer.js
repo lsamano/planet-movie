@@ -70,16 +70,17 @@ class MoviesContainer extends React.Component {
   render() {
 
     return (
-      <div id="right-col">
+      <div>
 
         <Search />
 
-        <div uk-height-match="true" className="flexify">
+        <div uk-height-match="true" className="flexify" id="right-col">
         <Switch>
           <Route path="/movies/popular" render={() => this.formatMovieCards(this.state.popularMovies)} />
           <Route path="/movies/top-rated" render={() => this.formatMovieCards(this.state.topRatedMovies)} />
           <Route path="/movies/now-playing" render={() => this.formatMovieCards(this.state.nowPlayingMovies)} />
           <Route path="/movies/upcoming" render={() => this.formatMovieCards(this.state.upcomingMovies)} />
+          <Route path="/movies" render={() => this.formatMovieCards(this.state.movies)} />
           <Route
           path="/movies/:ref_code"
           render={routerProps => {
