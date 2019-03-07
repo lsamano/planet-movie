@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import MyMovie from './MyMovie'
 
 const Navbar = ({sectionClickHandler, user}) => {
-  console.log("Le username:", user);
+  console.log("The user in Navbar:", user, user.name);
   return (
     <aside id="left-col" className="uk-light">
       <div className="bar-wrap">
@@ -32,6 +32,7 @@ const Navbar = ({sectionClickHandler, user}) => {
             <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
             <li className="uk-nav-divider"></li>
             <li><a><span className="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+            {user.name && <li><a><span className="uk-margin-small-right" uk-icon="icon: user"></span> {user.name}</a></li>}
         </ul>
       </div>
     </aside>

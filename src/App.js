@@ -34,29 +34,9 @@ class App extends Component {
         if (user.message) {
           return <Redirect to="/login" />;
         } else {
-          this.setState({ user }, () => console.log("User is logged in!", user));
+          this.setState({ user: user.user }, () => console.log("User is logged in from componentDidMount!", user));
         }
       });
-
-    fetch(baseURL)
-    .then(res => res.json())
-    .then(data => {
-      const popularMovies = data.filter(movie => movie.category === "popular")
-      const nowPlayingMovies = data.filter(movie => movie.category === "now_playing")
-      const upcomingMovies = data.filter(movie => movie.category === "upcoming")
-      const topRatedMovies = data.filter(movie => movie.category === "top_rated")
-
-      this.setState({
-        movies: data,
-        popularMovies,
-        topRatedMovies,
-        upcomingMovies,
-        nowPlayingMovies,
-				singleMovie: null,
-				moviePath: null
-      }, () => console.log("This is the state", this.state)
-      )
-    })
   }
 
 	getMovie(e, rentOrBuy, id, user) {
@@ -94,7 +74,7 @@ class App extends Component {
           return <Redirect to="/login" />;
         } else {
           localStorage.setItem("token", user.jwt);
-          this.setState({ user }, () => console.log("User is logged in!", user));
+          this.setState({ user: user.user }, () => console.log("User is logged in from loginSubmitHandler!", user));
         }
       });
   };
