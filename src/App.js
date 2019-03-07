@@ -16,7 +16,9 @@ class App extends Component {
     topRatedMovies: [],
     upcomingMovies: [],
     nowPlayingMovies: [],
-    user: {}
+    user: {},
+		rentals: [],
+		buys: []
   }
 
   componentDidMount = () => {
@@ -40,10 +42,29 @@ class App extends Component {
   }
 
 	getMovie(e, rentOrBuy, id, user) {
-		console.log("user_id:", user);
+		console.log("user_id:", user.id);
 		console.log("movie_id:", id);
+		let token = localStorage.token;
 		if (rentOrBuy === "rent") {
 			fetch("http://localhost:3000/api/v1/rentals", {
+	      method: "POST",
+	      body: JSON.stringify({rental: {
+					user_id: user.id,
+					movie_id: id
+				}}),
+	      headers: {
+	        "content-type": "application/json",
+	        accepts: "application/json",
+					Authorization: `Bearer ${token}`
+	      }
+	    })
+	      .then(resp => resp.json())
+				.then(rental => console.log("this is the rental:", rental))
+		}
+
+
+		if (rentOrBuy === "buy") {
+			fetch("http://localhost:3000/api/v1/purchases", {
 	      method: "POST",
 	      body: JSON.stringify({
 					user_id: user.id,

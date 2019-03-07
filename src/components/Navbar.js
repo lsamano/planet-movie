@@ -9,6 +9,9 @@ const Navbar = ({sectionClickHandler, user}) => {
       <div className="bar-wrap">
       <a className="uk-navbar-item uk-logo"> <span className="uk-margin-small-right" uk-icon="icon: play-circle"></span>Planet Movie</a>
         <ul className="uk-nav-default uk-nav-parent-icon" uk-nav="true">
+						{user.name && <li><a><span className="uk-margin-small-right" uk-icon="icon: user"></span>Welcome {user.name}</a></li>}
+						<li className="uk-nav-divider"></li>
+
             <li className="uk-active"><Link to="/movies"><a>Home</a></Link></li>
             <li className="uk-parent">
                 <a>Movies</a>
@@ -26,17 +29,23 @@ const Navbar = ({sectionClickHandler, user}) => {
                     <li><a>Sub item</a></li>
                 </ul>
             </li>
-            <li className="uk-nav-header">My Movies</li>
+            <li className="uk-nav-header">My Rentals</li>
 						<MyMovie/>
-            <li><a><span className="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
-            <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
-            <li className="uk-nav-divider"></li>
-            <li><a><span className="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
-            {user.name && <li><a><span className="uk-margin-small-right" uk-icon="icon: user"></span> {user.name}</a></li>}
+						<li className="uk-nav-header">My Purchases</li>
+						<MyMovie/>
+
+
+
         </ul>
       </div>
     </aside>
   )
 }
+
+// <li><a><span className="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+// <li><a><span className="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+
+// <li className="uk-nav-divider"></li>
+// <li><a><span className="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
 
 export default Navbar;
