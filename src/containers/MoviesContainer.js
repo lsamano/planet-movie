@@ -88,7 +88,7 @@ class MoviesContainer extends React.Component {
           <Route path="/movies/top-rated" render={() => this.formatMovieCards(this.state.topRatedMovies)} />
           <Route path="/movies/now-playing" render={() => this.formatMovieCards(this.state.nowPlayingMovies)} />
           <Route path="/movies/upcoming" render={() => this.formatMovieCards(this.state.upcomingMovies)} />
-          <Route path="/movies" render={() => this.formatMovieCards(this.state.movies)} />
+          <Route path="/movies" exact render={() => this.formatMovieCards(this.state.movies)} />
           <Route
           path="/movies/:ref_code"
           render={routerProps => {
